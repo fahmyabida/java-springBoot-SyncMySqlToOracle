@@ -10,15 +10,33 @@ import javax.persistence.*;
 @Data
 public class TMJadwal {
     @Id
-    @Column(name = "NO_MK")
-    private String noMk;
+    @Column(name = "TH_AKADEMI")
+    private String thAkademik;
 
-    @Column(name = "TH_AKADEMIK")   
-    private String thnAkademik;
-
+    @Id
     @Column(name = "SMT")
     private String semester;
 
+    @Id
     @Column(name = "KD_KURIKULUM")
     private String kdKurikulum;
+
+    @Column(name = "KD_FAK")
+    private String kdFak;
+
+    @Id
+    @Column(name = "KD_JURUSAN")
+    private String kdJurusan;
+
+    @Id
+    @Column(name = "KELAS")
+    private String kelas;
+
+    @Id
+    @Column(name = "PERTEMUAN_KE")
+    private String pertemuanKe;
+
+    @Id
+    @Column(name = "NO_MK")
+    private String noMK;
 }
