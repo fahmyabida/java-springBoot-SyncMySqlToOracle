@@ -1,4 +1,4 @@
-package com.learnsync.sync.oracle.Controller;
+package com.learnsync.sync.oracle.controller;
 
 import com.learnsync.sync.oracle.model.TMJadwal;
 import com.learnsync.sync.oracle.repository.TMJadwalRepository;

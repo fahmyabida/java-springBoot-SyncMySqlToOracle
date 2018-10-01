@@ -1,5 +1,6 @@
-package com.learnsync.sync.oracle.Controller;
+package com.learnsync.sync.oracle.controller;
 
+import com.learnsync.sync.mysql.repository.FahmyTryRepository;
 import com.learnsync.sync.oracle.model.FahmyTry;
 import com.learnsync.sync.oracle.repository.FahmyTryRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +22,18 @@ public class FahmyTryController {
 
     @Autowired
     FahmyTryRepo fRepo;
+    @Autowired
+    FahmyTryRepository fmySqlRepo;
 
     @GetMapping("/fahmy")
     public ResponseEntity getListFahmy(){
         Map<String, Object> map = new HashMap<>();
         List<FahmyTry> finalList = fRepo.findAll();
+        List<com.learnsync.sync.mysql.model.FahmyTry> finalListMySql = fmySqlRepo.findAll();
         map.put("total", finalList.size());
         map.put("count", finalList.size());
-        map.put("data" , finalList);
+        map.put("dataOracle" , finalList);
+        map.put("dataMySql" , finalListMySql);
         return new ResponseEntity(map, HttpStatus.OK);
     }
 
