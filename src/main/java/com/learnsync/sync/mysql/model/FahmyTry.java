@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "fahmy_try")
 @Data
-public class MySql {
+public class FahmyTry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
